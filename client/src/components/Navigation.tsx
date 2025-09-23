@@ -21,7 +21,7 @@ export default function Navigation({ onBookCall }: NavigationProps) {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-xl font-bold">
-              <span className="text-primary">AI</span>Automate
+              Sleeck<span className="text-primary">OS</span>
             </div>
           </div>
 

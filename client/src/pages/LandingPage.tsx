@@ -77,7 +77,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="text-xl font-bold">
-              <span className="text-primary">AI</span>Automate
+              Sleeck<span className="text-primary">OS</span>
             </div>
           </div>
           <p className="text-sm text-muted-foreground mb-4">
