@@ -10,12 +10,6 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
   return (
     <section className="min-h-screen flex items-center justify-center py-32 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        {/* Status Indicator */}
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-          <span className="text-sm text-muted-foreground">System Online</span>
-        </div>
-
         {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
           Don't hire more,<br />
