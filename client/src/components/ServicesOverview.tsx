@@ -56,7 +56,7 @@ const services: Service[] = [
 
 export default function ServicesOverview({ onLearnMore, onBookDemo }: ServicesOverviewProps) {
   return (
-    <section className="py-32 px-4">
+    <section id="services" className="py-32 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">

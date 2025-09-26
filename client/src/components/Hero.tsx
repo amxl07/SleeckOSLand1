@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
 import { calendlyBookings } from "@/lib/calendly";
 
 interface HeroProps {
@@ -25,24 +24,13 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
         {/* Video Container */}
         <div className="mb-12">
           <div className="relative aspect-video max-w-4xl mx-auto rounded-lg overflow-hidden bg-card border border-border">
-            {/* YouTube Video Placeholder - Replace with actual embed */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-card to-muted">
-              <Button 
-                size="lg" 
-                className="h-16 w-16 rounded-full"
-                onClick={() => {
-                  console.log('Play VSL video');
-                  calendlyBookings.demo();
-                }}
-                data-testid="button-play-video"
-              >
-                <Play className="h-6 w-6 ml-1" />
-              </Button>
-            </div>
-            {/* Actual YouTube embed would go here */}
-            <div className="absolute bottom-4 left-4 text-sm text-muted-foreground">
-              🎥 Watch Our 3-Minute Demo
-            </div>
+            <iframe
+              src="https://www.youtube.com/embed/hPnNK9pg7os"
+              title="VSL Demo Video"
+              className="absolute inset-0 w-full h-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </div>
 

@@ -55,7 +55,7 @@ const stats = [
 
 export default function SocialProof({ className }: SocialProofProps) {
   return (
-    <section className={`py-32 px-4 ${className}`}>
+    <section id="testimonials" className={`py-32 px-4 ${className}`}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">

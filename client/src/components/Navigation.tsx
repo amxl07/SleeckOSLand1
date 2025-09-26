@@ -11,7 +11,13 @@ export default function Navigation({ onBookCall }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    console.log(`Scroll to ${sectionId}`);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
     setIsMenuOpen(false);
   };
 

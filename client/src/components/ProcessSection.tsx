@@ -86,7 +86,7 @@ const steps: ProcessStep[] = [
 
 export default function ProcessSection({ onGetStarted }: ProcessSectionProps) {
   return (
-    <section className="py-32 px-4 bg-muted/30">
+    <section id="process" className="py-32 px-4 bg-muted/30">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
