@@ -84,7 +84,7 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
-            <span>No Upfront Costs</span>
+            <span>No Build Costs</span>
           </div>
         </div>
       </div>
