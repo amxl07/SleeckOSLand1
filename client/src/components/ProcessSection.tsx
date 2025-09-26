@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, FileText, Clock, Settings, CheckCircle, ArrowRight } from "lucide-react";
+import { calendlyBookings } from "@/lib/calendly";
 
 interface ProcessStep {
   id: string;
@@ -163,7 +164,7 @@ export default function ProcessSection({ onGetStarted }: ProcessSectionProps) {
                 className="text-lg px-8"
                 onClick={() => {
                   console.log('Book free discovery call clicked');
-                  onGetStarted?.();
+                  calendlyBookings.discoveryCall();
                 }}
                 data-testid="button-book-discovery-call"
               >
@@ -175,7 +176,7 @@ export default function ProcessSection({ onGetStarted }: ProcessSectionProps) {
                 className="text-lg px-8"
                 onClick={() => {
                   console.log('Get chatbot now clicked');
-                  onGetStarted?.();
+                  calendlyBookings.freeChatbot();
                 }}
                 data-testid="button-get-chatbot-now"
               >

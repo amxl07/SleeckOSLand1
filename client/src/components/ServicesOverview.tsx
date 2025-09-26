@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, BotMessageSquare, Zap, Check, ArrowRight } from "lucide-react";
+import { calendlyBookings } from "@/lib/calendly";
 
 interface Service {
   id: string;
@@ -130,7 +131,13 @@ export default function ServicesOverview({ onLearnMore, onBookDemo }: ServicesOv
                       className="text-lg px-8"
                       onClick={() => {
                         console.log(`Get started with ${service.id}`);
-                        onBookDemo?.(service.id);
+                        if (service.id === 'discovery-call') {
+                          calendlyBookings.discoveryCall();
+                        } else if (service.id === 'instagram-chatbot') {
+                          calendlyBookings.freeChatbot();
+                        } else {
+                          calendlyBookings.consultation();
+                        }
                       }}
                       data-testid={`button-get-${service.id}`}
                     >
@@ -157,6 +164,7 @@ export default function ServicesOverview({ onLearnMore, onBookDemo }: ServicesOv
             className="text-lg px-8"
             onClick={() => {
               console.log('Schedule consultation clicked');
+              calendlyBookings.discoveryCall();
             }}
             data-testid="button-consultation"
           >

@@ -1,5 +1,6 @@
 import { AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { calendlyBookings } from "@/lib/calendly";
 
 interface UrgencySectionProps {
   onGetChatbot?: () => void;
@@ -34,7 +35,7 @@ export default function UrgencySection({ onGetChatbot }: UrgencySectionProps) {
               className="bg-destructive hover:bg-destructive/90 text-destructive-foreground"
               onClick={() => {
                 console.log('Get free chatbot urgency clicked');
-                onGetChatbot?.();
+                calendlyBookings.freeChatbot();
               }}
               data-testid="button-urgency-chatbot"
             >

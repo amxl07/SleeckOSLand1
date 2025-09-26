@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { calendlyBookings } from "@/lib/calendly";
 
 interface NavigationProps {
   onBookCall?: () => void;
@@ -52,7 +53,7 @@ export default function Navigation({ onBookCall }: NavigationProps) {
               size="sm"
               onClick={() => {
                 console.log('Nav book call clicked');
-                onBookCall?.();
+                calendlyBookings.discoveryCall();
               }}
               data-testid="nav-book-call"
             >
@@ -107,7 +108,7 @@ export default function Navigation({ onBookCall }: NavigationProps) {
                   className="w-full"
                   onClick={() => {
                     console.log('Mobile nav book call clicked');
-                    onBookCall?.();
+                    calendlyBookings.discoveryCall();
                     setIsMenuOpen(false);
                   }}
                   data-testid="mobile-nav-book-call"

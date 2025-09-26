@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Clock, Shield, TrendingUp } from "lucide-react";
+import { calendlyBookings } from "@/lib/calendly";
 
 interface FinalCTAProps {
   onBookCall?: () => void;
@@ -74,7 +75,7 @@ export default function FinalCTA({ onBookCall, onRequestDemo }: FinalCTAProps) {
                 className="text-lg px-10 py-4"
                 onClick={() => {
                   console.log('Book free call clicked');
-                  onBookCall?.();
+                  calendlyBookings.discoveryCall();
                 }}
                 data-testid="button-book-free-call"
               >
@@ -86,7 +87,7 @@ export default function FinalCTA({ onBookCall, onRequestDemo }: FinalCTAProps) {
                 className="text-lg px-10 py-4"
                 onClick={() => {
                   console.log('See live demo clicked');
-                  onRequestDemo?.();
+                  calendlyBookings.demo();
                 }}
                 data-testid="button-see-demo"
               >
@@ -113,6 +114,7 @@ export default function FinalCTA({ onBookCall, onRequestDemo }: FinalCTAProps) {
             className="text-primary hover:text-primary/80"
             onClick={() => {
               console.log('View FAQ clicked');
+              calendlyBookings.consultation();
             }}
             data-testid="button-faq"
           >

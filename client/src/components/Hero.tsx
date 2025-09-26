@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { calendlyBookings } from "@/lib/calendly";
 
 interface HeroProps {
   onBookCall?: () => void;
@@ -31,7 +32,7 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
                 className="h-16 w-16 rounded-full"
                 onClick={() => {
                   console.log('Play VSL video');
-                  onWatchDemo?.();
+                  calendlyBookings.demo();
                 }}
                 data-testid="button-play-video"
               >
@@ -52,7 +53,7 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
             className="text-lg px-8 py-4"
             onClick={() => {
               console.log('Get free Instagram chatbot clicked');
-              onBookCall?.();
+              calendlyBookings.freeChatbot();
             }}
             data-testid="button-free-instagram-chatbot"
           >
@@ -64,7 +65,7 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
             className="text-lg px-8 py-4"
             onClick={() => {
               console.log('Request demo clicked');
-              onWatchDemo?.();
+              calendlyBookings.demo();
             }}
             data-testid="button-request-demo"
           >
