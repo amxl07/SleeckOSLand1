@@ -12,18 +12,13 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
       <div className="max-w-6xl mx-auto text-center">
         {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-          Don't hire more,<br />
-          <span className="text-primary">Automate smarter.</span>
-          <br />
-          <span className="text-2xl md:text-3xl lg:text-4xl font-normal text-muted-foreground">
-            With AI.
-          </span>
+          Empires are built by<br />
+          <span className="text-primary">obsessing over efficiency</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-4xl mx-auto">
-          Transform your business with AI chatbots, voice agents, and lead campaign systems. 
-          Scale from 10 leads to 10,000 conversions without hiring more staff.
+          We will make sure you are as efficient as possible
         </p>
 
         {/* Video Container */}
@@ -56,12 +51,12 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
             size="lg" 
             className="text-lg px-8 py-4"
             onClick={() => {
-              console.log('Book call clicked');
+              console.log('Get free Instagram chatbot clicked');
               onBookCall?.();
             }}
-            data-testid="button-book-call"
+            data-testid="button-free-instagram-chatbot"
           >
-            Book Free Strategy Call
+            Free Instagram Chatbot
           </Button>
           <Button 
             size="lg" 
@@ -77,8 +72,12 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
           </Button>
         </div>
 
-        {/* Trust Indicators */}
-        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
+        {/* Sub-line and Trust Indicators */}
+        <div className="mt-8 text-sm text-muted-foreground">
+          <span>Built 100+ automations</span>
+        </div>
+        
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 bg-green-500 rounded-full"></div>
             <span>500+ Businesses Automated</span>
