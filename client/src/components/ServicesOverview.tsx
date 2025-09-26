@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BotMessageSquare, Mic, Target, ArrowRight } from "lucide-react";
+import { Calendar, BotMessageSquare, Zap, Check, ArrowRight } from "lucide-react";
 
 interface Service {
   id: string;
@@ -18,40 +18,38 @@ interface ServicesOverviewProps {
 
 const services: Service[] = [
   {
-    id: "chatbots",
-    title: "AI Chatbots",
-    description: "Intelligent conversational agents that handle customer inquiries, qualify leads, and provide 24/7 support across multiple platforms.",
+    id: "discovery-call",
+    title: "Free Discovery Call (30 min)",
+    description: "Get a comprehensive analysis of your business and discover automation opportunities.",
     benefits: [
-      "Handle 1000+ conversations simultaneously",
-      "Reduce response time from hours to seconds",
-      "Qualify leads automatically with smart questions"
+      "Free systems audit",
+      "Get key insights on automating operations",
+      "Receive information on automating growth"
+    ],
+    icon: Calendar,
+    features: ["30-minute consultation", "Business analysis", "Automation roadmap", "No obligation"]
+  },
+  {
+    id: "instagram-chatbot",
+    title: "FREE Instagram Chatbot",
+    description: "Get a fully customized Instagram chatbot that handles customer inquiries and generates leads automatically.",
+    benefits: [
+      "Get a free customized Instagram chatbot"
     ],
     icon: BotMessageSquare,
-    features: ["WhatsApp Integration", "Lead Qualification", "Multi-language Support", "CRM Sync"]
+    features: ["Instagram Integration", "Lead Capture", "Automated Responses", "Custom Setup"]
   },
   {
-    id: "voice-agents",
-    title: "Voice Agents",
-    description: "AI-powered voice assistants that make and receive calls, book appointments, and conduct sales conversations with natural human-like speech.",
+    id: "custom-automation",
+    title: "Get Customized AI Automation System for Your Business",
+    description: "Complete AI automation solution tailored specifically for your business needs and goals.",
     benefits: [
-      "Make 100+ calls per hour automatically",
-      "Book appointments while you sleep",
-      "Never miss a lead follow-up call"
+      "AI systems that will increase your sales by a minimum of 20%",
+      "Systems that turn 4 hours of social media work into 5 minutes",
+      "AI systems that will completely automate your customer service"
     ],
-    icon: Mic,
-    features: ["Natural Speech", "Appointment Booking", "Sales Conversations", "Call Recording"]
-  },
-  {
-    id: "lead-campaigns",
-    title: "Lead Campaign Systems",
-    description: "Automated marketing funnels that capture, nurture, and convert leads through personalized multi-channel campaigns.",
-    benefits: [
-      "Increase conversion rates by 300%",
-      "Automate entire sales funnels",
-      "Personalize outreach at scale"
-    ],
-    icon: Target,
-    features: ["Email Automation", "Social Media Posting", "Performance Tracking", "A/B Testing"]
+    icon: Zap,
+    features: ["Sales Automation", "Social Media Management", "Customer Service", "Custom Integration"]
   }
 ];
 
@@ -62,96 +60,96 @@ export default function ServicesOverview({ onLearnMore, onBookDemo }: ServicesOv
         {/* Section Header */}
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Three Core Services That <span className="text-primary">Transform</span> Your Business
+            Our <span className="text-primary">Services</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Choose from our proven AI automation solutions or combine them for maximum impact. 
-            Each service is designed to scale with your business needs.
+            Choose the service that best fits your needs. Start with our free options to experience the power of AI automation.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        {/* Services Grid - Inspired by the attached image layout */}
+        <div className="space-y-24">
           {services.map((service, index) => {
             const IconComponent = service.icon;
+            const isEven = index % 2 === 0;
+            
             return (
-              <Card key={service.id} className="h-full hover-elevate">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <IconComponent className="h-8 w-8 text-primary" />
+              <div key={service.id} className={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                {/* Visual/Device Mockup Area */}
+                <div className={`relative ${!isEven ? 'lg:col-start-2' : ''}`}>
+                  <div className="relative aspect-square max-w-md mx-auto">
+                    {/* Background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl"></div>
+                    
+                    {/* Device mockup placeholder - you can replace with actual device images */}
+                    <div className="absolute inset-8 bg-card rounded-2xl border border-border flex items-center justify-center">
+                      <div className="p-8 bg-primary/10 rounded-full">
+                        <IconComponent className="h-16 w-16 text-primary" />
+                      </div>
                     </div>
-                    <div className="text-sm text-primary font-medium">
-                      0{index + 1}
-                    </div>
+                    
+                    {/* Floating elements */}
+                    <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full opacity-60"></div>
+                    <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-primary/20 rounded-full opacity-40"></div>
                   </div>
-                  <CardTitle className="text-2xl mb-3">{service.title}</CardTitle>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardHeader>
-                
-                <CardContent className="space-y-6">
-                  {/* Benefits */}
-                  <div>
-                    <h4 className="font-semibold mb-3 text-primary">Key Benefits:</h4>
-                    <ul className="space-y-2">
-                      {service.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                </div>
 
-                  {/* Features */}
-                  <div>
-                    <h4 className="font-semibold mb-3">Includes:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {service.features.map((feature, idx) => (
-                        <span 
-                          key={idx} 
-                          className="text-xs px-2 py-1 bg-muted rounded-md text-muted-foreground"
-                        >
-                          {feature}
-                        </span>
-                      ))}
+                {/* Content Area */}
+                <div className={`space-y-6 ${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  {/* Service Number and Icon */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center justify-center w-12 h-12 bg-primary rounded-full">
+                      <IconComponent className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <div className="text-sm text-primary font-semibold">
+                      SERVICE {String(index + 1).padStart(2, '0')}
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex flex-col gap-3 pt-4">
+                  {/* Title */}
+                  <h3 className="text-2xl md:text-3xl font-bold leading-tight">
+                    {service.title}
+                  </h3>
+
+                  {/* Benefits List */}
+                  <div className="space-y-4">
+                    {service.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="flex-shrink-0 w-5 h-5 bg-primary rounded-full flex items-center justify-center mt-0.5">
+                          <Check className="h-3 w-3 text-primary-foreground" />
+                        </div>
+                        <span className="text-muted-foreground">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="pt-4">
                     <Button 
-                      className="w-full"
+                      size="lg"
+                      className="text-lg px-8"
                       onClick={() => {
-                        console.log(`Book demo for ${service.id}`);
+                        console.log(`Get started with ${service.id}`);
                         onBookDemo?.(service.id);
                       }}
-                      data-testid={`button-demo-${service.id}`}
+                      data-testid={`button-get-${service.id}`}
                     >
-                      Book Demo
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      className="w-full"
-                      onClick={() => {
-                        console.log(`Learn more about ${service.id}`);
-                        onLearnMore?.(service.id);
-                      }}
-                      data-testid={`button-learn-${service.id}`}
-                    >
-                      Learn More <ArrowRight className="h-4 w-4 ml-2" />
+                      {service.id === 'discovery-call' ? 'Book Free Call' : 
+                       service.id === 'instagram-chatbot' ? 'Get Free Chatbot' : 
+                       'Get Started'}
+                      <ArrowRight className="h-5 w-5 ml-2" />
                     </Button>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             );
           })}
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-20">
           <p className="text-muted-foreground mb-6">
-            Not sure which service is right for you?
+            Ready to transform your business with AI automation?
           </p>
           <Button 
             size="lg" 
@@ -162,7 +160,7 @@ export default function ServicesOverview({ onLearnMore, onBookDemo }: ServicesOv
             }}
             data-testid="button-consultation"
           >
-            Schedule Free Consultation
+            Schedule Free Discovery Call
           </Button>
         </div>
       </div>

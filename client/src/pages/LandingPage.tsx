@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import ProblemStatement from "@/components/ProblemStatement";
 import ServicesOverview from "@/components/ServicesOverview";
 import SocialProof from "@/components/SocialProof";
 import ProcessSection from "@/components/ProcessSection";
@@ -47,6 +48,10 @@ export default function LandingPage() {
             onBookCall={handleBookCall}
             onWatchDemo={handleRequestDemo}
           />
+        </section>
+
+        <section id="problem">
+          <ProblemStatement />
         </section>
 
         <section id="services">
