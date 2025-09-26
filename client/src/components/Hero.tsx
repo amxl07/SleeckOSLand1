@@ -72,11 +72,7 @@ export default function Hero({ onBookCall, onWatchDemo }: HeroProps) {
           </Button>
         </div>
 
-        {/* Sub-line and Trust Indicators */}
-        <div className="mt-8 text-sm text-muted-foreground">
-          <span>Built 100+ automations</span>
-        </div>
-        
+        {/* Trust Indicators */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 bg-green-500 rounded-full"></div>
