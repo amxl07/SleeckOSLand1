@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ProblemStatement from "@/components/ProblemStatement";
 import ServicesOverview from "@/components/ServicesOverview";
+import UrgencySection from "@/components/UrgencySection";
 import SocialProof from "@/components/SocialProof";
 import ProcessSection from "@/components/ProcessSection";
 import FinalCTA from "@/components/FinalCTA";
@@ -59,6 +60,10 @@ export default function LandingPage() {
             onLearnMore={handleLearnMore}
             onBookDemo={handleBookDemo}
           />
+        </section>
+
+        <section id="urgency">
+          <UrgencySection onGetChatbot={handleBookCall} />
         </section>
 
         <section id="testimonials">
